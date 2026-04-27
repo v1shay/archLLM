@@ -1,4 +1,4 @@
-# ArchLLM-Lab
+# ArchLLM
 
 A High-Performance Hardware Simulation for LLM Memory Optimization
 
