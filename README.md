@@ -13,30 +13,6 @@ ArchLLM-Lab replaces naive truncation with a hardware-aware optimization layer.
 * **Token Budgeting:** Dynamically identifies and prunes redundancy in input streams.
 * **Architectural Efficiency:** Improves budget adherence by 95% and reduces HBM pressure by 30%.
 
-This is not a prompt-engineering tool.
-This is a low-level memory architecture simulation.
-
-## Core Flow
-Input Sequence ↓
-Redundancy Identification (Semantic Analysis) ↓
-Token Budgeting Layer ↓
-Memory Allocation Simulation ↓
-HBM Pressure Monitoring ↓
-Context Compression ↓
-Optimized State Output
-
-## Architecture
-
-### Simulation Core (C++)
-* Handles high-frequency memory allocation logs.
-* Simulates hardware-level token constraints and HBM bandwidth.
-* Uses a custom budget-adherence algorithm to minimize information loss.
-
-### Optimization Engine
-* **Identify Redundancy:** Analyzes input tokens for semantic overlap.
-* **Budget Controller:** Forces adherence to strict token limits without breaking context.
-* **Pressure Monitor:** Tracks simulated memory heat and latency.
-
 ## Key Stats
 | Metric | Improvement |
 | :--- | :--- |
@@ -52,6 +28,27 @@ Optimized State Output
 | **Build System** | CMake |
 | **Architecture** | Hardware-level Memory Simulation |
 | **Memory Tracking** | Custom HBM Monitor |
+
+## Core Flow
+*Input Sequence ↓
+*Redundancy Identification (Semantic Analysis) ↓
+*Token Budgeting Layer ↓
+*Memory Allocation Simulation ↓
+*HBM Pressure Monitoring ↓
+*Context Compression ↓
+*Optimized State Output
+
+## Architecture
+
+### Simulation Core (C++)
+* Handles high-frequency memory allocation logs.
+* Simulates hardware-level token constraints and HBM bandwidth.
+* Uses a custom budget-adherence algorithm to minimize information loss.
+
+### Optimization Engine
+* **Identify Redundancy:** Analyzes input tokens for semantic overlap.
+* **Budget Controller:** Forces adherence to strict token limits without breaking context.
+* **Pressure Monitor:** Tracks simulated memory heat and latency.
 
 ## Key Features
 * **Hardware-Level Constraints:** Real-world simulation of GPU memory bottlenecks.
