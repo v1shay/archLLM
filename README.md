@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>ArchLLM</h1>
+<h1>Arch-LLM</h1>
 
 <p><strong>Hardware-aware memory optimization for large language models under strict token budgets.</strong></p>
 
