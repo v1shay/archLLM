@@ -1,72 +1,129 @@
-# ArchLLM
+<div align="center">
 
-A High-Performance Hardware Simulation for LLM Memory Optimization
+<h1>ArchLLM</h1>
 
-ArchLLM-Lab is a C++ simulation environment designed to maximize semantic information retention within strict hardware token budgets.
+<p><strong>Hardware-aware memory optimization for large language models under strict token budgets.</strong></p>
+
+</div>
+
+---
+
+## Results
+
+- **Budget Adherence:** 95%  
+- **HBM Pressure Reduction:** 30%  
+- **Core Performance:** 100% C++ execution pipeline  
+- **Redundancy Reduction:** High-fidelity semantic pruning  
+- **System Type:** Hardware-level memory simulation for LLM context optimization  
+
+---
 
 ## Overview
-As LLMs scale, the bottleneck shifts from compute to memory. Standard context management often leads to "memory thrashing" or loss of critical semantic data when hitting hardware limits.
 
-ArchLLM-Lab replaces naive truncation with a hardware-aware optimization layer.
+Arch-LLM is a hardware-aware simulation system for optimizing memory usage in large language models. It models token flow under strict hardware constraints and replaces naive truncation strategies with structured, semantics-preserving compression.
 
-* **Hardware Constraints:** Simulates HBM (High Bandwidth Memory) limits and RAG-based cache pressure.
-* **Token Budgeting:** Dynamically identifies and prunes redundancy in input streams.
-* **Architectural Efficiency:** Improves budget adherence by 95% and reduces HBM pressure by 30%.
+The system treats context as a constrained resource, applying redundancy-aware pruning and allocation strategies to maximize retained information within fixed token budgets.
 
-## Key Stats
-| Metric | Improvement |
-| :--- | :--- |
-| **Budget Adherence** | 95% |
-| **HBM Pressure** | -30% |
-| **Execution Speed** | Optimized via 100% C++ Core |
-| **Redundancy Reduction** | High-fidelity pruning |
+---
 
-## Tech Stack
-| Layer | Technology |
-| :--- | :--- |
-| **Core Logic** | C++ 20 |
-| **Build System** | CMake |
-| **Architecture** | Hardware-level Memory Simulation |
-| **Memory Tracking** | Custom HBM Monitor |
+## Method / Approach
 
-## Core Flow
-*Input Sequence ↓
-*Redundancy Identification (Semantic Analysis) ↓
-*Token Budgeting Layer ↓
-*Memory Allocation Simulation ↓
-*HBM Pressure Monitoring ↓
-*Context Compression ↓
-*Optimized State Output
+<p align="center">
+  <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/7380c58e-3516-4f3f-9053-6b732392f376" />
+</p>
 
-## Architecture
+- **Input Stream Processing**  
+  Sequences are ingested and structured for analysis under constrained memory conditions.
 
-### Simulation Core (C++)
-* Handles high-frequency memory allocation logs.
-* Simulates hardware-level token constraints and HBM bandwidth.
-* Uses a custom budget-adherence algorithm to minimize information loss.
+- **Redundancy Detection**  
+  Semantic overlap between tokens is identified to eliminate low-information repetition.
 
-### Optimization Engine
-* **Identify Redundancy:** Analyzes input tokens for semantic overlap.
-* **Budget Controller:** Forces adherence to strict token limits without breaking context.
-* **Pressure Monitor:** Tracks simulated memory heat and latency.
+- **Token Budgeting Layer**  
+  Enforces strict adherence to predefined token limits through controlled pruning.
 
-## Key Features
-* **Hardware-Level Constraints:** Real-world simulation of GPU memory bottlenecks.
-* **Token Optimization:** Maximizes semantic density per token.
-* **Redundancy Detection:** Native C++ implementation for identifying overlapping context.
-* **95% Adherence:** Guaranteed performance within pre-defined memory budgets.
+- **Memory Simulation**  
+  Simulates HBM constraints, bandwidth limits, and allocation pressure.
 
-## Setup & Run
+- **Compression + Output**  
+  Produces an optimized context state with maximal semantic retention.
+
+---
+
+## Data
+
+- **Type:** synthetic / structured token streams  
+- **Domain:** LLM context windows and retrieval pipelines  
+- **Focus:** memory-constrained inference scenarios  
+
+<p align="center">
+ <img width="1693" height="929" alt="image" src="https://github.com/user-attachments/assets/82c3090d-5285-4990-8e43-a193ec6f7ae1" />
+</p>
+
+Preprocessing:
+- token segmentation  
+- semantic grouping  
+- redundancy scoring  
+
+---
+
+## Experiments / Reproduction
 
 ```bash
-# clone
-git clone [https://github.com/v1shay/archLLM-sim.git](https://github.com/v1shay/archLLM-sim.git)
-cd archLLM-sim
+./archLLM_sim
+````
 
-# build
+## Run simulation:
+
+```bash
+./archLLM_sim --input sample_sequence.txt
+```
+
+## Build + run full pipeline:
+
+```bash
 mkdir build && cd build
 cmake ..
 make
-
-# run simulation
 ./archLLM_sim
+```
+
+Input: token sequence
+Output: optimized context + memory usage metrics
+
+Dependencies
+
+```bash
+C++ 20
+CMake
+Standard Template Library (STL)
+```
+
+## Repository Structure
+
+```bash
+archLLM-sim/
+├── src/
+├── include/
+├── simulation/
+├── optimizer/
+├── metrics/
+├── build/
+└── README.md
+```
+
+## Installation
+
+```bash
+git clone https://github.com/v1shay/archLLM-sim.git
+cd archLLM-sim
+mkdir build && cd build
+cmake ..
+make
+```
+
+## Optional:
+
+```bash
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make -j$(nproc)
+```
