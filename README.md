@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Arch-LLM</h1>
+<h1>ArchLLM</h1>
 
 <p><strong>ArchLLM is a memory-aware inference architecture designed to power the Arch1 model</strong></p>
 
@@ -44,7 +44,7 @@
 ## Method / Approach
 
 <p align="center">
-  <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/7380c58e-3516-4f3f-9053-6b732392f376" />
+  <img width="1536" height="1024" alt="Screenshot 2026-07-07 at 4 15 30 PM" src="https://github.com/user-attachments/assets/ef850de3-2740-4f31-89d9-21bf0fc696e6" />
 </p>
 
 <p align="center"><em>The ArchLLM optimization pipeline minimizes redundant context movement while preserving high-value memory for long-context inference</em></p>
@@ -54,7 +54,7 @@
 ## Data
 
 <p align="center">
-  <img width="1536" height="1024" alt="Screenshot 2026-07-07 at 4 15 30 PM" src="https://github.com/user-attachments/assets/ef850de3-2740-4f31-89d9-21bf0fc696e6" />
+   <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/7380c58e-3516-4f3f-9053-6b732392f376" />
 </p>
 
 <p align="center"><em>The evaluation pipeline transforms token streams into optimized memory layouts and GPU-level efficiency metrics</em></p>
